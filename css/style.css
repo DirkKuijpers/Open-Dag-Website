@@ -84,21 +84,23 @@ header nav .nav-btn:hover {
     margin-bottom: 20px;
 }
 
-.hero button {
+.btn-primary {
     background-color: #FFD700; /* geel */
     color: #0D3B66; /* donkerblauw */
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 18px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.hero button:hover {
+.btn-primary:hover {
     background-color: #FFC107;
+    transform: translateY(-2px);
 }
+
 
 /* --- Content sectie --- */
 .content {
