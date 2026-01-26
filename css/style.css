@@ -1,0 +1,157 @@
+/* --- Basis --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* --- Header & nav-knoppen --- */
+header {
+    background-color: #0D3B66; /* donkerblauw */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 30px;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav {
+    display: flex;
+    gap: 10px;
+}
+
+header nav .nav-btn {
+    background-color: #FFD700; /* geel */
+    color: #0D3B66; /* donkerblauw tekst */
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+header nav .nav-btn:hover {
+    background-color: #FFC107; /* iets donkerder geel bij hover */
+}
+
+/* --- Hero sectie --- */
+.hero {
+    background-image: url('../img/hero.jpg');
+    background-size: cover;
+    background-position: center center; /* 👈 DIT is de key */
+    background-repeat: no-repeat;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    position: relative;
+}
+
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.4); /* donkere overlay voor contrast */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #FFD700; /* geel */
+    color: #0D3B66; /* donkerblauw */
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #FFC107;
+}
+
+/* --- Content sectie --- */
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content h2 {
+    font-size: 32px;
+    color: #0D3B66;
+    margin-bottom: 15px;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* --- Footer --- */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #0D3B66;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* zorgt dat footer onderaan blijft */
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav a {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
