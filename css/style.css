@@ -157,3 +157,91 @@ footer {
         font-size: 16px;
     }
 }
+
+/* Titel + lijn */
+h1 {
+    text-align: center;
+    font-size: 48px;
+    color: #0D3B66;
+    margin-top: 40px;
+}
+
+hr.divider {
+    width: 80px;
+    height: 4px;
+    background-color: #FFD700;
+    border: none;
+    margin: 10px auto 40px auto;
+}
+
+/* Grid van vakken */
+.lessen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 32px;
+    color: #0D3B66;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: #0D3B66;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
