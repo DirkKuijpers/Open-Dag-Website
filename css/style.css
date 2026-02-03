@@ -97,6 +97,7 @@ header {
 .hero h1 {
     font-size: 48px;
     margin-bottom: 15px;
+    color: white;
 }
 
 .hero p {
@@ -129,6 +130,7 @@ h1 {
     font-size: 48px;
     color: #0D3B66;
     margin-top: 40px;
+
 }
 
 .divider {
@@ -140,10 +142,22 @@ h1 {
 }
 
 .content {
-    max-width: 900px;
+    max-width: 700px;
     margin: 40px auto;
     padding: 0 20px;
+    text-align: center;
 }
+
+.content h2{
+    padding-bottom: 15px;
+    font-size:x-large;
+}
+
+.content p{
+    font-size: large;
+    padding: 10px;
+}
+
 
 /* =========================
    LESSEN
