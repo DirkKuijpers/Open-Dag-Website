@@ -466,9 +466,11 @@ footer {
    RESPONSIVE / HAMBURGER
 ========================= */
 @media (max-width: 900px) {
+    /* HEADER & NAV */
     header {
         flex-wrap: wrap;
         align-items: center;
+        padding: 20px 30px;
     }
 
     .hamburger {
@@ -494,32 +496,71 @@ footer {
         border-radius: 0;
     }
 
+    /* LESSEN GRID */
     .lessen-grid {
         grid-template-columns: 1fr;
     }
 
+    /* MIJN ERVARING */
+    .ervaring-main {
+        padding: 20px 10px;
+        min-height: auto;
+    }
+
+    .ervaring-box {
+        padding: 30px 20px;
+    }
+
     .ervaring-content {
         flex-direction: column;
+        gap: 25px;
         text-align: center;
     }
 
     .ervaring-tekst {
+        flex: 1 1 100%;
         text-align: center;
     }
 
-    .ervaring-tekst, .ervaring-foto {
+    .ervaring-foto {
         flex: 1 1 100%;
     }
 
+    .ervaring-foto img {
+        width: 80%;
+        max-width: 350px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .ervaring-tekst h2 {
+        font-size: 28px;
+    }
+
+    .ervaring-tekst h3 {
+        font-size: 22px;
+    }
+
+    .ervaring-stuk {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* LOCATIE PAGINA */
     .locatie-blok {
         flex-direction: column;
     }
 
+    /* DOCENTEN PAGINA */
     .docenten-grid {
         grid-template-columns: 1fr;
     }
 
     .docent-card img {
         height: 250px;
+    }
+
+    .docent-info {
+        padding: 15px;
     }
 }
