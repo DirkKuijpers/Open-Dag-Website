@@ -335,3 +335,151 @@ footer {
         font-size: 16px;
     }
 }
+
+/* =========================
+   MIJN ERVARING PAGINA - GECENTREERDE BOX
+========================= */
+.ervaring-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* header + footer ruimte */
+    padding: 20px;
+}
+
+.ervaring-box {
+    background-color: #FFD700; /* grote gekleurde box */
+    border-radius: 25px;
+    padding: 50px;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.ervaring-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.ervaring-tekst {
+    flex: 1 1 400px;
+    color: #0D3B66;
+    text-align: left;
+}
+
+.ervaring-tekst h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.ervaring-tekst h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.opleiding {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.ervaring-stuk {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ervaring-foto {
+    flex: 1 1 400px;
+}
+
+.ervaring-foto img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ervaring-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ervaring-tekst {
+        text-align: center;
+    }
+
+    .ervaring-tekst, .ervaring-foto {
+        flex: 1 1 100%;
+    }
+}
+
+/* =========================
+   DOCENTEN PAGINA
+========================= */
+.docenten-main {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.docenten-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* altijd 4 naast elkaar */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.docent-card {
+    background-color: #FFD700;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 350px; /* zo blijven lege blokken groot */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.docent-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+.docent-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.docent-info {
+    padding: 20px;
+    color: #0D3B66;
+}
+
+.docent-info h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.docent-info p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .docenten-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .docent-card img {
+        height: 250px;
+    }
+}
