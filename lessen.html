@@ -22,103 +22,102 @@
         </nav>
     </header>
 
-
     <!-- Main content -->
     <main>
         <h1>Onze Lessen</h1>
         <hr class="divider">
 
         <div class="lessen-grid">
-            <div class="card" onclick="openModal('pra')"><h2>PRA</h2></div>
-            <div class="card" onclick="openModal('pro')"><h2>PRO</h2></div>
-            <div class="card" onclick="openModal('nat')"><h2>NAT</h2></div>
-            <div class="card" onclick="openModal('web')"><h2>WEB</h2></div>
-            <div class="card" onclick="openModal('ned')"><h2>NED</h2></div>
-            <div class="card" onclick="openModal('rek')"><h2>REK</h2></div>
-            <div class="card" onclick="openModal('mtu')"><h2>MTU</h2></div>
-            <div class="card" onclick="openModal('mtg')"><h2>MTG</h2></div>
-            <div class="card" onclick="openModal('codelab')"><h2>Code Lab</h2></div>
+            <div class="card" data-target="pra"><h2>PRA</h2></div>
+            <div class="card" data-target="pro"><h2>PRO</h2></div>
+            <div class="card" data-target="nat"><h2>NAT</h2></div>
+            <div class="card" data-target="web"><h2>WEB</h2></div>
+            <div class="card" data-target="ned"><h2>NED</h2></div>
+            <div class="card" data-target="rek"><h2>REK</h2></div>
+            <div class="card" data-target="mtu"><h2>MTU</h2></div>
+            <div class="card" data-target="mtg"><h2>MTG</h2></div>
+            <div class="card" data-target="codelab"><h2>Code Lab</h2></div>
         </div>
     </main>
 
     <!-- Modals -->
-    <!-- PRA -->
     <div id="pra" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('pra')">&times;</span>
             <h2>PRA - Praktijk</h2>
+            <h3>Praktische opdrachten & projecten</h3>
             <p>In PRA leer je opdrachten uitvoeren en echte projecten maken. Je leert samenwerken, plannen en problemen oplossen. Het is een praktische manier om ervaring op te doen voordat je echte software projecten gaat bouwen.</p>
         </div>
     </div>
 
-    <!-- PRO -->
     <div id="pro" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('pro')">&times;</span>
             <h2>PRO - Project Ondersteuning</h2>
+            <h3>Projectvaardigheden verbeteren</h3>
             <p>Je leert beter werken in de praktijk: hoe je moet samenwerken, plannen en taken efficiënt uitvoeren. Geen directe ondersteuning bij projecten, maar vaardigheden om praktijkopdrachten beter aan te pakken.</p>
         </div>
     </div>
 
-    <!-- NAT -->
     <div id="nat" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('nat')">&times;</span>
             <h2>NAT - Native</h2>
+            <h3>Softwareontwikkeling & programmeertalen</h3>
             <p>NAT richt zich op verdieping in softwareontwikkeling en programmeertalen. Je leert technieken die je nodig hebt om complexe applicaties te bouwen.</p>
         </div>
     </div>
 
-    <!-- WEB -->
     <div id="web" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('web')">&times;</span>
             <h2>WEB - Web Development</h2>
+            <h3>Websites en webapps bouwen</h3>
             <p>In WEB leer je websites en webapplicaties bouwen met HTML, CSS, JavaScript en frameworks zoals React. Je maakt praktijkprojecten die je direct kan laten zien.</p>
         </div>
     </div>
 
-    <!-- NED -->
     <div id="ned" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('ned')">&times;</span>
             <h2>NED - Nederlands</h2>
-            <p>Taalvaardigheden: leren lezen, schrijven en formuleren. Gericht op algemeen gebruik van de Nederlandse taal.</p>
+            <h3>Taalvaardigheden</h3>
+            <p>Leren lezen, schrijven en formuleren. Gericht op algemeen gebruik van de Nederlandse taal. Focus op correct en effectief communiceren.</p>
         </div>
     </div>
 
-    <!-- REK -->
     <div id="rek" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('rek')">&times;</span>
             <h2>REK - Rekenen</h2>
-            <p>Algemeen rekenen: oefenen met rekenen en wiskunde vaardigheden die je nodig hebt in het dagelijks leven.</p>
+            <h3>Algemene rekenvaardigheden</h3>
+            <p>Oefenen met rekenen en wiskundige vaardigheden die je nodig hebt in het dagelijks leven en bij software development opdrachten.</p>
         </div>
     </div>
 
-    <!-- MTU -->
     <div id="mtu" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('mtu')">&times;</span>
             <h2>MTU - Mentor Uur</h2>
+            <h3>Persoonlijke begeleiding</h3>
             <p>Tijdens MTU krijg je persoonlijke begeleiding en planning van je opleiding. Je bespreekt doelen en voortgang met je mentor.</p>
         </div>
     </div>
 
-    <!-- MTG -->
     <div id="mtg" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('mtg')">&times;</span>
             <h2>MTG - Mentor Gesprekken</h2>
+            <h3>Evaluatie & feedback</h3>
             <p>In MTG evalueer je je voortgang met je mentor en ontvang je feedback over je werk en persoonlijke ontwikkeling.</p>
         </div>
     </div>
 
-    <!-- Code Lab -->
     <div id="codelab" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('codelab')">&times;</span>
-            <h2>CodeLab</h2>
+            <h2>Code Lab</h2>
+            <h3>Zelfstandig oefenen</h3>
             <p>Tijd waarin je op school met begeleiding aan je eigen opdrachten of huiswerk kan werken. Zo kun je extra oefenen of projecten afronden.</p>
         </div>
     </div>

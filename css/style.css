@@ -72,12 +72,10 @@ header {
     background-size: cover;
     background-position: center;
     height: 400px;
-
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
     color: white;
     position: relative;
 }
@@ -130,7 +128,6 @@ h1 {
     font-size: 48px;
     color: #0D3B66;
     margin-top: 40px;
-
 }
 
 .divider {
@@ -158,37 +155,56 @@ h1 {
     padding: 10px;
 }
 
-
 /* =========================
-   LESSEN
+   LESSEN PAGINA
 ========================= */
 .lessen-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto 60px;
+    max-width: 1100px;
+    margin: 0 auto 80px;
     padding: 0 20px;
 }
 
 .card {
-    background-color: white;
-    padding: 50px 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    cursor: pointer;
+    background: linear-gradient(145deg, #FFD700, #FFC107);
+    border-radius: 25px;
+    padding: 40px 20px;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    color: #0D3B66;
+    font-weight: bold;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card h2 {
-    font-size: 32px;
     color: #0D3B66;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: rgba(255,255,255,0.15);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.card:hover::after {
+    transform: rotate(0deg) scale(1.2);
 }
 
 /* =========================
@@ -198,41 +214,78 @@ h1 {
     display: none;
     position: fixed;
     inset: 0;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.6); /* donker overlay */
     z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px); /* licht blur effect */
+}
+
+.modal.active {
+    display: block;
+    opacity: 1;
 }
 
 .modal-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 600px;
-    width: 80%;
+    background: linear-gradient(135deg, #0D3B66, #1E4D8B); /* mooi blauw */
+    color: white;
+    border-radius: 25px;
+    max-width: 650px;
+    width: 90%;
+    margin: 8% auto;
+    padding: 40px 30px;
     text-align: center;
-    position: relative;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
 }
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    color: #FFD700; /* goud accent */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 0;
+}
+
 
 .close {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
+    color: #FFD700;
     cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
 }
 
-.modal-content h2 {
-    color: #0D3B66;
-    margin-bottom: 15px;
+.close:hover {
+    color: #fff;
+    transform: scale(1.2);
 }
 
-.modal-content p {
-    line-height: 1.5;
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #FFD700;
+    border-radius: 3px;
 }
 
 /* =========================
-   LOCATIE
+   LOCATIE PAGINA
 ========================= */
 .map-section iframe {
     width: 100%;
@@ -278,77 +331,18 @@ h1 {
 }
 
 /* =========================
-   FOOTER
-========================= */
-footer {
-    background-color: #0D3B66;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
-}
-
-/* =========================
-   RESPONSIVE / HAMBURGER
-========================= */
-@media (max-width: 900px) {
-    header {
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    /* Toon hamburger op mobiel */
-    .hamburger {
-        display: block;
-    }
-
-    /* Verberg menu standaard */
-    .nav-menu {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 15px;
-    }
-
-    /* Menu zichtbaar bij click */
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px 0;
-        border-radius: 0; /* optioneel, full width */
-    }
-
-    .locatie-blok {
-        flex-direction: column;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-}
-
-/* =========================
-   MIJN ERVARING PAGINA - GECENTREERDE BOX
+   MIJN ERVARING
 ========================= */
 .ervaring-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 150px); /* header + footer ruimte */
+    min-height: calc(100vh - 150px);
     padding: 20px;
 }
 
 .ervaring-box {
-    background-color: #FFD700; /* grote gekleurde box */
+    background-color: #FFD700;
     border-radius: 25px;
     padding: 50px;
     max-width: 1000px;
@@ -400,22 +394,6 @@ footer {
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .ervaring-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .ervaring-tekst {
-        text-align: center;
-    }
-
-    .ervaring-tekst, .ervaring-foto {
-        flex: 1 1 100%;
-    }
-}
-
 /* =========================
    DOCENTEN PAGINA
 ========================= */
@@ -428,7 +406,7 @@ footer {
 
 .docenten-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* altijd 4 naast elkaar */
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 40px;
 }
@@ -439,7 +417,7 @@ footer {
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    min-height: 350px; /* zo blijven lege blokken groot */
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -473,8 +451,70 @@ footer {
     margin: 0;
 }
 
-/* Responsive */
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #0D3B66;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* =========================
+   RESPONSIVE / HAMBURGER
+========================= */
 @media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 0;
+    }
+
+    .lessen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ervaring-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ervaring-tekst {
+        text-align: center;
+    }
+
+    .ervaring-tekst, .ervaring-foto {
+        flex: 1 1 100%;
+    }
+
+    .locatie-blok {
+        flex-direction: column;
+    }
+
     .docenten-grid {
         grid-template-columns: 1fr;
     }
