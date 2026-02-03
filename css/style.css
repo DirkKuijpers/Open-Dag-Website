@@ -1,4 +1,6 @@
-/* --- Basis --- */
+/* =========================
+   BASIS / RESET
+========================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,50 +8,69 @@
     font-family: Arial, sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #f5f5f5;
     color: #333;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Header & nav-knoppen --- */
+/* =========================
+   HEADER + NAV
+========================= */
 header {
-    background-color: #0D3B66; /* donkerblauw */
+    background-color: #0D3B66;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 50px;
+    padding: 30px 50px;
+    position: relative;
 }
 
-header .logo img {
+.logo img {
     height: 50px;
 }
 
-header nav {
+/* Nav menu standaard alleen desktop */
+.nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
-header nav .nav-btn {
-    background-color: #FFD700; /* geel */
-    color: #0D3B66; /* donkerblauw tekst */
-    padding: 10px 25px;
+/* Nav buttons */
+.nav-btn {
+    background-color: #FFD700;
+    color: #0D3B66;
+    padding: 10px 22px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
-header nav .nav-btn:hover {
-    background-color: #FFC107; /* iets donkerder geel bij hover */
+.nav-btn:hover {
+    background-color: #FFC107;
 }
 
-/* --- Hero sectie --- */
+/* Hamburger icoon */
+.hamburger {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
     background-image: url('../img/hero.jpg');
     background-size: cover;
-    background-position: center center; /* 👈 DIT is de key */
-    background-repeat: no-repeat;
+    background-position: center;
     height: 400px;
 
     display: flex;
@@ -61,12 +82,11 @@ header nav .nav-btn:hover {
     position: relative;
 }
 
-
 .hero::after {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0,0,0,0.4); /* donkere overlay voor contrast */
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
 }
 
 .hero-content {
@@ -77,7 +97,6 @@ header nav .nav-btn:hover {
 .hero h1 {
     font-size: 48px;
     margin-bottom: 15px;
-    color: white;
 }
 
 .hero p {
@@ -86,8 +105,8 @@ header nav .nav-btn:hover {
 }
 
 .btn-primary {
-    background-color: #FFD700; /* geel */
-    color: #0D3B66; /* donkerblauw */
+    background-color: #FFD700;
+    color: #0D3B66;
     padding: 14px 32px;
     border-radius: 30px;
     text-decoration: none;
@@ -102,64 +121,9 @@ header nav .nav-btn:hover {
     transform: translateY(-2px);
 }
 
-
-/* --- Content sectie --- */
-.content {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.content h2 {
-    font-size: 32px;
-    color: #0D3B66;
-    margin-bottom: 15px;
-}
-
-.content p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* --- Footer --- */
-html, body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    background-color: #0D3B66;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto; /* zorgt dat footer onderaan blijft */
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav a {
-        margin: 10px 0;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-}
-
-/* Titel + lijn */
+/* =========================
+   ALGEMENE CONTENT
+========================= */
 h1 {
     text-align: center;
     font-size: 48px;
@@ -167,21 +131,29 @@ h1 {
     margin-top: 40px;
 }
 
-hr.divider {
+.divider {
     width: 80px;
     height: 4px;
     background-color: #FFD700;
     border: none;
-    margin: 10px auto 40px auto;
+    margin: 10px auto 40px;
 }
 
-/* Grid van vakken */
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   LESSEN
+========================= */
 .lessen-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     max-width: 1000px;
-    margin: 0 auto 60px auto;
+    margin: 0 auto 60px;
     padding: 0 20px;
 }
 
@@ -191,8 +163,8 @@ hr.divider {
     border-radius: 15px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card h2 {
@@ -205,26 +177,26 @@ hr.divider {
     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
-/* Modal */
+/* =========================
+   MODALS
+========================= */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    overflow: auto;
+    inset: 0;
     background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: white;
     margin: 10% auto;
     padding: 30px;
     border-radius: 12px;
-    width: 80%;
     max-width: 600px;
-    position: relative;
+    width: 80%;
     text-align: center;
+    position: relative;
 }
 
 .close {
@@ -242,38 +214,36 @@ hr.divider {
 }
 
 .modal-content p {
-    color: #333;
-    font-size: 16px;
     line-height: 1.5;
 }
 
-/* Google Maps */
+/* =========================
+   LOCATIE
+========================= */
 .map-section iframe {
     width: 100%;
     height: 400px;
     border: none;
 }
 
-/* Locatie blok */
 .locatie-blok {
-    background-color: #0D3B66; /* donkerblauw */
+    background-color: #0D3B66;
     border-radius: 20px;
     padding: 40px;
     display: flex;
     gap: 40px;
     max-width: 1100px;
-    margin: 40px auto 80px auto;
+    margin: 40px auto 80px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* Tekst */
 .locatie-tekst {
     flex: 1;
     color: white;
 }
 
 .locatie-tekst h2 {
-    color: #FFD700; /* geel */
+    color: #FFD700;
     margin-bottom: 10px;
 }
 
@@ -282,7 +252,6 @@ hr.divider {
     margin-bottom: 20px;
 }
 
-/* Afbeelding */
 .locatie-afbeelding {
     flex: 1;
 }
@@ -294,9 +263,61 @@ hr.divider {
     object-fit: cover;
 }
 
-/* Responsive */
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #0D3B66;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* =========================
+   RESPONSIVE / HAMBURGER
+========================= */
 @media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* Toon hamburger op mobiel */
+    .hamburger {
+        display: block;
+    }
+
+    /* Verberg menu standaard */
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    /* Menu zichtbaar bij click */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 0; /* optioneel, full width */
+    }
+
     .locatie-blok {
         flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
     }
 }
