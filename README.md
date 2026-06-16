@@ -18,4 +18,8 @@ Een informatieve website gemaakt voor de open dag van Curio. Bezoekers kunnen in
 - JavaScript
 
 ## Screenshots
-
+![Home](screenshots/home.png)
+![Docenten](screenshots/docenten.png)
+![Lessen](screenshots/lessen.png)
+![Locatie](screenshots/locatie.png)
+![Ervaring](screenshots/ervaring.png)
